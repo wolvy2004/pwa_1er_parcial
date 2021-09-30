@@ -5,7 +5,7 @@ services:
     image: mysql:5.7.27
     environment:
       MYSQL_DATABASE: pwa2019
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: pwa123
       MYSQL_USER: pwauser
       MYSQL_PASSWORD: pwa123 
     ports:
@@ -13,6 +13,15 @@ services:
     volumes:
     - ./mysqldata:/var/lib/mysql
 
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: pwauser
+      PMA_PASSWORD: pwa123
+    ports:
+      - 8001:80
   app:
     image: yiisoftware/yii2-php:7.1-apache
     environment:
