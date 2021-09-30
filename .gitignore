@@ -1,3 +1,5 @@
 
 #ignorar la carpeta de persistenca a la base de datos
 mysqldata
+# ignorar una carpeta personal
+personal
