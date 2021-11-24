@@ -20,6 +20,7 @@ services:
       DDBB_HOST: BBDD
       DDBB_USER: pwauser
       DDBB_PASSWORD: pwa123
+      PRODUCTION: 0
     volumes:
       - ./src/composer/cache:/root/.composer/cache:delegated
       - ./src/basic:/app:delegated
