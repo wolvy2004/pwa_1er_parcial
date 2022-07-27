@@ -1,37 +1,38 @@
-version: '3.1'
+version: "3.1"
 
 services:
-  db:
+  BBDD:
     image: mysql:5.7.27
     environment:
       MYSQL_DATABASE: pwa2019
-      MYSQL_ROOT_PASSWORD: pwa123
+      MYSQL_ROOT_PASSWORD: pwaroot
       MYSQL_USER: pwauser
-      MYSQL_PASSWORD: pwa123 
-    ports:
-      - "4000:3306"
+      MYSQL_PASSWORD: pwa123
     volumes:
-    - ./mysqldata:/var/lib/mysql
-
-  myadmin:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      PMA_HOST: db
-      PMA_PORT: 3306
-      PMA_USER: pwauser
-      PMA_PASSWORD: pwa123
+      - ./mysqldata:/var/lib/mysql
     ports:
-      - 8001:80
-  app:
+      - 4000:3306
+  
+  APPServer:
     image: yiisoftware/yii2-php:7.1-apache
     environment:
       DDBB_NAME: pwa2019
+      DDBB_HOST: BBDD
       DDBB_USER: pwauser
-      DDBB_PASS: pwa123
-      DDBB_HOST: db
+      DDBB_PASSWORD: pwa123
+      PRODUCTION: 0
     volumes:
       - ./src/composer/cache:/root/.composer/cache:delegated
       - ./src/basic:/app:delegated
     ports:
       - 8000:80
-  
+
+  PhpMyAdmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: BBDD
+      PMA_PORT: 3306
+      PMA_USER: pwauser
+      PMA_PASSWORD: pwa123
+    ports:
+      - 8001:80   
