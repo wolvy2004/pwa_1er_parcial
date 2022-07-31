@@ -78,7 +78,7 @@ class UsuarioController extends Controller
                     $model->accessToken =password_hash(random_bytes(5), PASSWORD_DEFAULT);
                     $model->authKey =md5(random_bytes(5));
                     if($model->save()){
-                        return $this->redirect(["view", "id" => $model->id]);
+                        return $this->redirect(["index"]);
                     }
                     else{
                         $model->getErrors();
@@ -107,7 +107,7 @@ class UsuarioController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [
