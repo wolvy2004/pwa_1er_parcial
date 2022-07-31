@@ -1,5 +1,5 @@
-# pwa_1er_parcial - Carpeta Vendor // 
+#FINAL PWA - Carpeta Vendor // 
 
-Ejecutar en la raiz de la carpeta src/basic 
-composer install
+-> Ejecutar 
+docker-compose exex aPPServer composer update
 para poder descargar la carpeta vendor necesaria para que funcione el composer
