@@ -12,11 +12,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="usuario-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="d-flex justify-content-between"><?= Html::encode($this->title) ?> 
+        <?= Html::a('Crear Usuario', ['create'], ['class' => 'btn btn-success rigth']) ?>
+        </h1>
 
-    <p>
-        <?= Html::a('Create Usuario', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+   
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -29,8 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'username',
             'nombre',
-            'apellido',
-            'password',
+            'email',
+            //'password',
             //'accessToken',
             //'authKey',
 
