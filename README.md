@@ -1,5 +1,12 @@
-#FINAL PWA - Carpeta Vendor // 
+# FINAL ***PWA***
 
--> Ejecutar 
-docker-compose exex aPPServer composer update
-para poder descargar la carpeta vendor necesaria para que funcione el composer
+**Ejecutar**
+# Levantar el contenedor
+docker-compose up -d
+# Actualizar la carpeta Vendor para que funcione Yii
+docker-compose exec APPServer composer update
+# Dar permisos
+chmod +777 src/ -R
+# Hacer las migraciones necesarias: ejecutar
+./bin/yii migrate
+
