@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Calificacion */
 
-$this->title = 'Create Calificacion';
-$this->params['breadcrumbs'][] = ['label' => 'Calificacions', 'url' => ['index']];
+$this->title = 'agregar Calificacion';
+$this->params['breadcrumbs'][] = ['label' => 'Calificaciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="calificacion-create">

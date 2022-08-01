@@ -22,9 +22,9 @@ use app\models\Calificacion;
 
     <?= $form->field($model, 'actores')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'genero_id')->dropDownList(ArrayHelper::map(Genero::find()->all(), 'id', 'descripcion'),['prompt'=>'Seleccion un Genero']) ?>
+    <?= $form->field($model, 'genero')->dropDownList(ArrayHelper::map(Genero::find()->all(), 'id', 'descripcion'),['prompt'=>'Seleccion un Genero']) ?>
 
-    <?= $form->field($model, 'calificacion_id')->dropDownList(ArrayHelper::map(Calificacion::find()->all(), 'id', 'descripcion'),['prompt'=>'Seleccion Calificacion']) ?>
+    <?= $form->field($model, 'calificacion')->dropDownList(ArrayHelper::map(Calificacion::find()->all(), 'id', 'descripcion'),['prompt'=>'Seleccion Calificacion']) ?>
 
     <?= $form->field($model, 'image')->textarea(['rows' => 6]) ?>
 
@@ -33,7 +33,7 @@ use app\models\Calificacion;
     <?= $form->field($model, 'duracion')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
