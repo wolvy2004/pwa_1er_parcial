@@ -1,12 +1,13 @@
-# FINAL ***PWA***
+# FINAL ***PWA 2022***
 
-**Ejecutar**
-# Levantar el contenedor
+
+## Levantar el contenedor
 docker-compose up -d
-# Actualizar la carpeta Vendor para que funcione Yii
+## Actualizar la carpeta Vendor para que funcione Yii
 docker-compose exec APPServer composer update
-# Dar permisos
-chmod +777 src/ -R
-# Hacer las migraciones necesarias: ejecutar
-./bin/yii migrate
+## Dar permisos necesarios 
+sudo chmod +777 src/ -R
+## Hacer las migraciones necesarias:
+1. sudo  chmod +777 ./bin/yii.sh migrate
+1. ./bin/yii.sh migrate
 
